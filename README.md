@@ -1,6 +1,3 @@
-# yokesh_chatbot
-yokesh_chatbot
-
 🤖 Supply Chain & Warehouse Automation Chatbot
 A Streamlit web app powered by OpenAI GPT models that provides domain-specific answers related to Supply Chain, Warehouse Automation, and AutoStore systems.
 
