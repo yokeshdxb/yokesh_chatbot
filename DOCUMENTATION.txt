@@ -1,0 +1,106 @@
+
+📄 Project Documentation
+🤖 Supply Chain & Warehouse Automation Chatbot
+
+📌 Overview
+This project is a domain-specific conversational AI chatbot built with Streamlit and OpenAI GPT models. 
+It is designed to answer questions only in the Supply Chain, Warehouse Automation, and AutoStore systems domain.
+
+The app provides a web-based chat interface with session-based memory, domain filtering, and cost tracking.
+
+🔧 Architecture
+Components:
+- Streamlit Frontend: Handles UI and user interaction
+- OpenAI API (GPT-3.5/GPT-4): Powers the conversational logic
+- Domain Filter: Ensures responses are limited to warehouse & supply chain topics
+- Environment Config: .env for local development, Streamlit Secrets for deployment
+
+Flow:
+1. User enters a question in the Streamlit chat interface
+2. App validates the query and sends it to the OpenAI API
+3. Domain rules filter out unrelated queries
+4. AI response is displayed and stored in session history
+5. Token usage is tracked for cost calculation
+
+📂 Project Structure
+yokesh_chatbot/
+│── app.py              # Main Streamlit app
+│── requirements.txt    # Dependencies for deployment
+│── .env                # Local API key (ignored in cloud)
+│── README.md           # Project documentation
+│── DOCUMENTATION.md    # Detailed technical documentation
+
+🚀 Features
+- Domain-restricted conversational AI
+- Streamlit-based web interface
+- GPT-3.5 & GPT-4 support
+- Context-aware conversation memory
+- Cost and token usage tracking
+- Works locally and on Streamlit Cloud
+
+⚙️ Installation Guide
+1️⃣ Clone Repository
+git clone https://github.com/your-username/yokesh_chatbot.git
+cd yokesh_chatbot
+
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+
+3️⃣ Setup API Key
+Create a .env file:
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxx
+
+For Streamlit Cloud, add it to Secrets Manager.
+
+4️⃣ Run the App
+streamlit run app.py
+
+🏗️ Deployment
+Streamlit Cloud:
+1. Push repo to GitHub
+2. Create new app on Streamlit Cloud
+3. Add API key in Secrets
+4. Deploy and access via public URL
+
+Local (with ngrok for sharing):
+from pyngrok import ngrok
+public_url = ngrok.connect(8501)
+print(public_url)
+
+📌 Usage Example
+🧑‍💼 You: what is autostore?
+🤖 Bot: AutoStore is an advanced automated storage and retrieval system (AS/RS) 
+that optimizes warehouse operations. It stacks bins vertically in a grid, 
+accessed by robots that move along the top of the grid. This design eliminates aisles, 
+providing very high storage density.
+
+🧑‍💼 You: which type of warehouse is this useful?
+🤖 Bot: AutoStore is ideal for e-commerce, retail distribution, spare parts 
+management, pharmaceuticals, food & beverage, and 3PL providers.
+
+📜 API Details
+Library: openai>=1.0.0
+Endpoint: client.chat.completions.create
+Models Supported:
+- gpt-3.5-turbo
+- gpt-4-turbo
+
+📌 Requirements
+- Python 3.8+
+- Streamlit >= 1.35.0
+- OpenAI >= 1.0.0
+- python-dotenv
+- pyngrok (for local tunneling)
+
+📈 Future Enhancements
+- Add a database for conversation history persistence
+- Multi-domain support with dynamic domain loading
+- Add speech-to-text & text-to-speech integration
+- Dockerize the app for easier deployment
+
+📜 License
+MIT License
+
+👨‍💻 Author
+Developed by Yokesh Kumar
+Contact: yokesh1987@gmail.com
